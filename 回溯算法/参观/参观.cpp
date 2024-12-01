@@ -51,7 +51,7 @@ public:
     //sum表示加和
     //used标记使用过的位置
     //m是二维数组
-    void backtracking(int step,int newsum,vector<vector<int>>& m,vector<bool>& used){
+    void backtracking(int step,int newsum,vector<bool>& used){
         //结束判断
         if(step==n){
             sum=max(sum,newsum);
@@ -67,7 +67,7 @@ public:
                 continue;
             }else{
                 used[i]=true;
-                backtracking(step+1,newsum+m[step][i],m,used);
+                backtracking(step+1,newsum+m[step][i],used);
                 used[i]=false;
 
             }
@@ -75,9 +75,9 @@ public:
     }
 
     //使用回溯函数
-    int maxsum(vector<vector<int>>& m){
+    int maxsum(){
         vector<bool> used(n,false);
-        backtracking(0,0,m,used);
+        backtracking(0,0,used);
         return sum;
     }
 };
@@ -85,7 +85,6 @@ public:
 int main() {
     cin >> n;
 
-    vector<vector<int>> m(n, vector<int>(n));  // 初始化熟悉程度矩阵
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cin >> m[i][j];  // 读取每个大队长对每个景点的熟悉程度
@@ -93,6 +92,6 @@ int main() {
     }
 
     Solution solution;
-    cout << solution.maxsum(m) << endl;  // 输出最大熟悉程度之和
+    cout << solution.maxsum() << endl;  // 输出最大熟悉程度之和
     return 0;
 }
