@@ -37,6 +37,7 @@ int bfs(int x1,int y1){
             if(a==n&&b==m) return dist[n][m];
         }
     }
+    return dist[n][m];
 }
 
 int main(){
