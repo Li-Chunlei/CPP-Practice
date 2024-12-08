@@ -27,6 +27,11 @@ int cmp(node a,node b){
     return a.x>b.x;//如果长度相同，按字典序比较
 }
 
+
+//本题使用scanf和printf不能很好的通过
+//但是换成cin和cout就可以通过
+//所以有的时候可以考虑用cin和cout
+//但是好奇怪啊啊啊啊啊
 int main(){
     cin>>n;
     for(int i=0;i<n;i++){
