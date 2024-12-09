@@ -20,7 +20,7 @@ void dfs(int x){
         return;
     }
     for(int i=1;i<=n;i++){
-        if(b1[i]==0&&b2[x+i]==0&&b3[x-i+15]==0){
+        if(b1[i]==0&&b2[x+i]==0&&b3[x-i+15]==0){//剪枝
             a[x]=i;
             b1[i]=1;b2[x+i]=1;b3[x-i+15]=1;
             dfs(x+1);
